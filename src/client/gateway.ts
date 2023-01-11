@@ -3,7 +3,7 @@ import WebSocket from "ws";
 import { OpCodes, GatewayCloseCodes } from "../constants/constants";
 import { REST } from "./rest";
 
-class GatewayClient extends EventEmitter {
+export class GatewayClient extends EventEmitter {
     private http: REST = new REST(this.token);
     private websocket: WebSocket;
 
