@@ -4,16 +4,16 @@ import { GuildFeatures } from "./GuildFeatures";
 import { Sticker } from "../models/sticker";
 
 export interface GuildOptions {
-    id: number
+    id: string
     name: string
     icon: string | null | undefined
     iconHash?: string | null | undefined
     splash: string | null | undefined
-    ownerID: number
-    afkChannelID: number | null | undefined,
+    ownerID: string
+    afkChannelID: string | null | undefined,
     afkTimeout: number
     widgetEnabled?: boolean
-    widgetChannelID?: number | null | undefined
+    widgetChannelID?: string | null | undefined
     verificationLevel: number
     defaultNotifications: number
     explicitFilter: number
@@ -21,10 +21,10 @@ export interface GuildOptions {
     emojis: Array<Emoji>
     features: GuildFeatures
     mfaLevel: number
-    applicationID: number | null | undefined
-    systemChannelID: number | null | undefined
+    applicationID: string | null | undefined
+    systemChannelID: string | null | undefined
     systemChannelFlags: number
-    rulesChannelID: number | null | undefined
+    rulesChannelID: string | null | undefined
     maxPresences: number | null | undefined
     maxMembers?: number
     vanityURL: string | null | undefined
@@ -33,7 +33,7 @@ export interface GuildOptions {
     premiumTier: number
     premiumSubscriptionCount: number
     preferredLocale: string
-    publicUpdatesChannelID: number | null | undefined
+    publicUpdatesChannelID: string | null | undefined
     maxVideoChannelUsers?: number
     approximateMemberCount?: number
     approximatePresenceCount?: number
