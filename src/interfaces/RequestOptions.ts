@@ -1,5 +1,5 @@
 export interface RequestOptions {
-    method: string
+    method?: string
     path: string
     data?: any
 }
