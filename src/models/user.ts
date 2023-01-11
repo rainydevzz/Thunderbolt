@@ -1,3 +1,7 @@
+export class User {
+
+}
+
 export interface UserOptions {
     id: string
     username: string

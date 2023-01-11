@@ -1,5 +1,4 @@
 import EventEmitter from "events";
-import { RequestOptions } from "../interfaces/RequestOptions";
 import { Paths } from "../constants/constants";
 
 export class REST extends EventEmitter {
@@ -44,4 +43,10 @@ export class REST extends EventEmitter {
     async put(options: RequestOptions) {
         return await this.request({path: options.path, method: 'PUT', data: options.data});
     }
+}
+
+export interface RequestOptions {
+    method?: string
+    path: string
+    data?: any
 }
