@@ -1,4 +1,4 @@
 export interface WelcomeScreen {
-    description: ?string,
+    description: string | null | undefined,
     welcomeChannels: any // fix later
 }
