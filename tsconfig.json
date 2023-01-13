@@ -1,0 +1,7 @@
+{
+    "compilerOptions": {
+        "strictPropertyInitialization": false,
+        "esModuleInterop": true,
+        "resolveJsonModule": true
+    }
+}

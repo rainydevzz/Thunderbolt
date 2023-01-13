@@ -1,5 +1,7 @@
 import { GatewayClient } from "../client/gateway";
+import { token } from "./cfg.json";
 
-const bot = new GatewayClient(process.env.token);
+console.log(token);
+const bot = new GatewayClient(token);
 
 bot.connect();

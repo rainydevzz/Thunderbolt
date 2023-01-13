@@ -15,11 +15,11 @@ export class GatewayClient extends EventEmitter {
     }
 
     async connect() {
-        const gatewayResponse = await this.http.get({ path: "/gateway/" });
+        const gatewayResponse = await this.http.get({ path: "gateway/" });
         const gatewayBody = await gatewayResponse.json();
         const gateway = gatewayBody.url;
 
-        this.websocket = new WebSocket(`${gateway}?v=10&encoding=json`);
+        this.websocket = new WebSocket(`wss://gateway.discord.gg/?v=10&encoding=json`);
 
         this.websocket.on("open", () => {
             this.emit("debug", `[Gateway] Connected to wss://${gateway}?v=10&encoding=json`);
@@ -36,6 +36,7 @@ export class GatewayClient extends EventEmitter {
                 case (10):
                     await this.heartbeat(payload.d.heartbeat_interval * Math.random(), { op: 1, d: payload.d })
                     await this.identify(this.token);
+                    this.emit("debug", payload);
                     this.emit('ready');
                     break;
 
